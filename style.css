@@ -1,0 +1,302 @@
+:root{
+    --pink: #f14e95;
+    --bg: #0a0a0a;
+    --shadow: 10px 10px 10px rgb(0,0,0);
+}
+
+body{
+    font-size: 1.2rem;
+    font-family: "Work Sans", sans-serif;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: grayscale();
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+}
+
+.hero h1, .hero h4, .hero p {
+    text-shadow: var(--shadow);
+}
+
+.hero h1 {
+    font-family: "Sacramento", cursive;
+    font-size: 6rem;
+}
+
+.hero h4 {
+    font-size: 1.6rem;
+}
+
+.hero p {
+    font-size: 1.4rem;
+}
+
+.hero a {
+    color: var(--pink);
+    background-color: white;
+}
+
+.hero a:hover {
+    background-color: var(--pink);
+    color: white;
+}
+
+.mynavbar {
+    background-color: rgba(255,255,255,0.5);
+}
+
+.mynavbar .navbar-brand, .mynavbar .offcanvas-title{
+    font-family: "Sacramento", cursive;
+    font-weight: bold;
+    font-size: 3.2rem;
+}
+
+.mynavbar .nav-link {
+    text-transform: uppercase;
+}
+
+/* home */
+.home {
+    background-image: url(img/bg2.png);
+    height: 100vh;
+    margin-top: -6rem;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+}
+
+.home h3 {
+    color: var(--pink);
+    font-size: 5rem;
+    font-family: "Sacramento", cursive;
+}
+
+.pasangan {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pengantin {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'katapria photopria photowanita katawanita';   
+}
+
+.pengantin .nama {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.pengantin .nama .egi {
+    text-align: right;
+}
+
+.katapria {
+    grid-area: katapria;
+    text-align: right;
+}
+
+.photopria {
+    grid-area: photopria;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.photowanita {
+    grid-area: photowanita;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+.katawanita {
+    grid-area: katawanita;
+    text-align: left;
+}
+
+/* info */
+.info {
+    margin-top: 200px;
+    height: 100vh;
+}
+.alamat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alamat h2 {
+    font-size: 5rem;
+    font-weight: bold;
+    font-family: 'sacramento';
+}
+
+.alamat p {
+    font-size:1.5rem;
+    margin-top: 1rem;
+}
+.alamat a {
+    font-size: 1.2rem;
+    width: 30%;
+}
+
+/* story */
+
+.story h2 {
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 5rem;
+    font-family: 'sacramento', sanserif;
+}
+
+/* gallery */
+#gallery {
+    margin: auto;
+    overflow: hidden;
+}
+.gallery h2 {
+    font-size: 3.2rem;
+    text-align: center;
+    margin: 5rem 0;
+    font-family: 'sacramento', sanserif;
+}
+
+.photo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 400px));
+}
+
+.photo .img {
+    width: 100%;
+    display: block;
+}
+
+/* media query  */
+
+/* laptop */
+@media (max-width: 992px){
+    html{
+        font-size: 75%;
+    }
+    .simply-countdown>.simply-section {
+        padding: 70px;
+    }
+    .pengantin {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'katapria photopria' 
+        'photowanita katawanita';
+    }
+
+    .photopria {
+        grid-area: photopria;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
+
+    .photowanita {
+        grid-area: photowanita;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-right: 30px;
+    }
+}
+
+/* tablet */
+@media (max-width: 768px){
+    html{
+        font-size: 65%;
+    }
+    .simply-countdown>.simply-section {
+        padding: 60px;
+        margin: 5px;
+    }
+    .mynavbar .nav-link {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .pengantin {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'katapria photopria' 
+    'photowanita katawanita';   
+    }
+    .photopria {
+        grid-area: photopria;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .photowanita {
+        grid-area: photowanita;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-right: 30px;
+    }
+}
+
+/* phone */
+@media (max-width: 576px){
+    html{
+        font-size: 60%;
+    }
+    .simply-countdown > .simply-section {
+        padding: 30px;
+        margin: 3px;
+      }
+      .pengantin {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'katapria photopria' 
+        'photowanita katawanita'; 
+      }
+      .photopria {
+        grid-area: photopria;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    .photowanita {
+        grid-area: photowanita;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-right: 30px;
+    }
+
+    .katapria .ket {
+        display: none;
+    }
+
+    .katawanita .ket {
+        display: none;
+    }
+}
